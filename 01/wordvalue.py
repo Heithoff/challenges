@@ -13,11 +13,9 @@ def calc_word_value(word):
     except:
         return 0
 
-def max_word_value(words=None):
+def max_word_value(words=load_words()):
     """Calculate the word with the max value, can receive a list
     of words as arg, if none provided uses default DICTIONARY"""
-    if not words:
-        words = load_words()
     return max(words, key=calc_word_value)
 
 if __name__ == "__main__":
